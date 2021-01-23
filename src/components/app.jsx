@@ -6,8 +6,7 @@ import giphy from 'giphy-api'
 
 const App = () => {
 
-  // how do i change the main image when i select a item on the gif list
-
+  // gifs to store array of gif ids, selectedGif to store left-scene gif id
   const [gifs, setGifs] = useState([]);
   const [selectedGif, setSelectedGif] = useState('KZjw9Aigr4CloZx3Bv');
 
@@ -26,24 +25,19 @@ const App = () => {
     })
   };
 
-  // Func to set gif being clicked
-  const clicked = (id) => {
-    setSelectedGif(id)
-  }
-
   // anything inside renders UI
   return (
     <div>
       <div className="left-scene">
-        {/* pass search func into SearchBar.jsx */}
+        {/* pass prop named searchFunc into SearchBar.jsx */}
         <SearchBar searchFunc={search}/>
         <div className="selected-gif">
-          <Gif gifId={selectedGif} clicked={clicked}/>
+          <Gif gifId={selectedGif} />
         </div>
       </div>
       <div className="right-scene">
-        {/* pass array of urls to giflist */}
-        <Giflist listOfId={gifs}/>
+        {/* pass prop named listOfID and setSelectedGif to Giflist.jsx */}
+        <Giflist listOfId={gifs} setSelectedGif={setSelectedGif}/>
       </div>
     </div>
   );

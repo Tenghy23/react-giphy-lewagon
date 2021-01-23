@@ -1,13 +1,15 @@
 import React from 'react';
 import Gif from './gif.jsx';
 
-const Giflist = ( {listOfId} ) => {
+// destructuring the props using ({listOfId, setSelectedGif}) instead of (props)
+const Giflist = ( {listOfId, setSelectedGif} ) => {
 
-  // gifs refer to an array of urls ,at start, list is empty
-  // map to convert each url into a giphy
+  // maps the array of ids (listofId) into <Gif /> component 
   return(
     <div className="gif-list">
-      {listOfId.map(Id => <Gif gifId={Id} key={Id} /> )}
+      {/* you need both gifId and setSelectedGif prop as they are part of the gif component */}
+      {/* just set key prop to id to remove the console error showing */}
+      {listOfId.map(id => <Gif gifId={id} key={id} setSelectedGif={setSelectedGif}/> )}
     </div>
   )
 }
