@@ -32,7 +32,8 @@
     "react-dom": "16.8.4"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "lint": "eslint './src/**/*.js*'",
     "deploy": "webpack -p && gh-pages -d dist"
   }

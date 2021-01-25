@@ -8,7 +8,7 @@ const Giflist = ( {listOfId, setSelectedGif} ) => {
   return(
     <div className="gif-list">
       {/* you need both gifId and setSelectedGif prop as they are part of the gif component */}
-      {/* just set key prop to id to remove the console error showing */}
+      {/* set key prop to id to remove the console error showing */}
       {listOfId.map(id => <Gif gifId={id} key={id} setSelectedGif={setSelectedGif}/> )}
     </div>
   )
