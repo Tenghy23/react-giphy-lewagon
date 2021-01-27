@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Gif = ( {gifId, clicked} ) => {
+const Gif = ( {gifId, clicked, setSelectedGif} ) => {
   
   const src = `https://media.giphy.com/media/${gifId}/giphy.gif`
 
   const handleclick = () => {
-    clicked(gifId)
+    setSelectedGif(gifId)
   }
 
 
