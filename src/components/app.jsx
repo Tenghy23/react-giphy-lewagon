@@ -26,11 +26,6 @@ const App = () => {
     })
   };
 
-  // Func to set gif being clicked
-  const clicked = (id) => {
-    setSelectedGif(id)
-  }
-
   // anything inside renders UI
   return (
     <div>
@@ -38,12 +33,12 @@ const App = () => {
         {/* pass search func into SearchBar.jsx */}
         <SearchBar searchFunc={search}/>
         <div className="selected-gif">
-          <Gif gifId={selectedGif} clicked={clicked}/>
+          <Gif gifId={selectedGif} />
         </div>
       </div>
       <div className="right-scene">
         {/* pass array of urls to giflist */}
-        <Giflist listOfId={gifs}/>
+        <Giflist listOfId={gifs} setSelectedGif={setSelectedGif}/>
       </div>
     </div>
   );
